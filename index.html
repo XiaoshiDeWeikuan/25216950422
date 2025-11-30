@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>小兔鲜儿 - 商品分类页</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 页眉区域 -->
+  <div class="top-header">
+    <a href="#">请先登录</a> |
+    <a href="#">免费注册</a> |
+    <a href="#">我的订单</a> |
+    <a href="#">会员中心</a> |
+    <a href="#">帮助中心</a> |
+    <a href="#">在线客服</a> |
+    <a href="#" class="mobile-link">
+      <img src="uploads/手机.png" alt="手机版图标" class="mobile-icon"/>
+      手机版
+    </a>
+  </div>
+  <!-- 头部导航区域 -->
+  <header class="header-nav">
+    <div class="container">
+      <h1 class="logo">
+        <a href="#" title="小兔鲜儿首页">
+          <img src="uploads/小兔鲜儿logo.png" alt="小兔鲜儿"/>
+        </a>
+      </h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">生鲜</a></li>
+          <li><a href="#">美食</a></li>
+          <li><a href="#">餐厨</a></li>
+          <li><a href="#">电器</a></li>
+          <li><a href="#">家居</a></li>
+          <li><a href="#">洗护</a></li>
+          <li><a href="#">孕婴</a></li>
+          <li><a href="#">服装</a></li>
+        </ul>
+      </nav>
+      <div class="search-cart">
+        <div class="search-box">
+          <img src="uploads/搜索.png" alt="搜索" class="search-icon"/>
+          <input type="text" placeholder="25216950422 黄浩嘉"/>
+        </div>
+        <div class="cart">
+          <img src="uploads/购物 车1.png" alt="购物车" class="cart-icon"/>
+          <span class="cart-count">22</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- 左侧分类 + 右侧图片布局（控制图片宽度不超页面） -->
+  <main class="main-container">
+    <!-- 左侧分类导航（黑框） -->
+    <aside class="category-aside">
+      <ul class="category-list">
+        <li class="category-item">
+          <a href="#" class="item-link main-title">生鲜果蔬</a>
+          <a href="#" class="item-link sub-title">水果</a>
+          <a href="#" class="item-link sub-title">蔬菜</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">美食推荐</a>
+          <a href="#" class="item-link sub-title">面包</a>
+          <a href="#" class="item-link sub-title">干果</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">数码电子</a>
+          <a href="#" class="item-link sub-title">手机</a>
+          <a href="#" class="item-link sub-title">电脑</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">家庭电器</a>
+          <a href="#" class="item-link sub-title">电视</a>
+          <a href="#" class="item-link sub-title">冰箱</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">厨房用品</a>
+          <a href="#" class="item-link sub-title">厨房电器</a>
+          <a href="#" class="item-link sub-title">餐具</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">居家生活</a>
+          <a href="#" class="item-link sub-title">床品</a>
+          <a href="#" class="item-link sub-title">四件套</a>
+          <a href="#" class="item-link sub-title">被枕</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">洗护美妆</a>
+          <a href="#" class="item-link sub-title">洗发</a>
+          <a href="#" class="item-link sub-title">洁面</a>
+          <a href="#" class="item-link sub-title">美妆</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">孕婴用品</a>
+          <a href="#" class="item-link sub-title">奶粉</a>
+          <a href="#" class="item-link sub-title">玩具</a>
+          <a href="#" class="item-link sub-title">服装</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">服饰穿搭</a>
+          <a href="#" class="item-link sub-title">女装</a>
+          <a href="#" class="item-link sub-title">男装</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+        <li class="category-item">
+          <a href="#" class="item-link main-title">日用杂货</a>
+          <a href="#" class="item-link sub-title">户外</a>
+          <a href="#" class="item-link sub-title">图书</a>
+          <a href="#" class="item-link arrow-link">></a>
+        </li>
+      </ul>
+    </aside>
+    <!-- 右侧图片（高度与黑框一致，宽度不超页面） -->
+    <section class="banner-section">
+      <!-- 替换为你的实际图片路径 -->
+      <img src="uploads/首页-自然造物 Made in Nature-淘宝网.png" alt="春季促销图" class="banner-img"/>
+    </section>
+  </main>
+
+  <!-- 新增：新鲜好物模块（完全匹配图片布局） -->
+  <section class="fresh-goods">
+    <div class="container">
+      <!-- 新鲜好物标题栏 -->
+      <div class="goods-header">
+        <h2 class="goods-title">新鲜好物</h2>
+        <p class="goods-desc">新鲜出炉 品质靠谱</p>
+        <a href="#" class="view-all">查看全部 &gt;</a>
+      </div>
+      <!-- 新鲜好物商品列表 -->
+      <div class="goods-list">
+        <!-- 商品1：KN95口罩 -->
+        <div class="goods-item">
+          <img src="uploads/新鲜好物1.png" alt="KN95级莫兰迪色防护口罩" class="goods-img"/>
+          <div class="goods-info">
+            <h3 class="goods-name">KN95级莫兰迪色防护口罩</h3>
+            <span class="goods-price">¥79</span>
+          </div>
+        </div>
+        <!-- 商品2：普洱茶盒 -->
+        <div class="goods-item">
+          <img src="uploads/新鲜好物2.png" alt="紫檀外独板三层普洱茶盒" class="goods-img"/>
+          <div class="goods-info">
+            <h3 class="goods-name">紫檀外独板三层普洱茶盒</h3>
+            <span class="goods-price">¥566</span>
+          </div>
+        </div>
+        <!-- 商品3：记事本 -->
+        <div class="goods-item">
+          <img src="uploads/新鲜好物3.png" alt="法拉蒙高颜值记事本可定制" class="goods-img"/>
+          <div class="goods-info">
+            <h3 class="goods-name">法拉蒙高颜值记事本可定制</h3>
+            <span class="goods-price">¥58</span>
+          </div>
+        </div>
+        <!-- 商品4：布艺沙发 -->
+        <div class="goods-item">
+          <img src="uploads/新鲜好物4.png" alt="科技布布艺沙发" class="goods-img"/>
+          <div class="goods-info">
+            <h3 class="goods-name">科技布布艺沙发</h3>
+            <span class="goods-price">¥3579</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- 新增：人气推荐模块（含点击事件） -->
+<section class="popular-recommend">
+  <div class="container">
+    <div class="recommend-header">
+      <h2 class="recommend-title">人气推荐</h2>
+      <p class="recommend-desc">人气爆款 不容错过</p>
+      <a href="#" class="view-all">查看全部 &gt;</a>
+    </div>
+    <div class="recommend-list">
+      <!-- 绑定 click 事件，传递卡片名称 -->
+      <div class="recommend-item" onclick="handleRecommendClick('特惠推荐')">
+        <img src="uploads/人气推荐1.png" alt="畅销好书" class="item-img"/>
+        <h3 class="item-title">特惠推荐</h3>
+        <p class="item-subtitle">我猜得到 你的需要</p>
+      </div>
+      <div class="recommend-item" onclick="handleRecommendClick('爆款推荐')">
+        <img src="uploads/人气推荐2.png" alt="电脑数码" class="item-img"/>
+        <h3 class="item-title">爆款推荐</h3>
+        <p class="item-subtitle">人气好物推荐</p>
+      </div>
+      <div class="recommend-item" onclick="handleRecommendClick('节日礼品一站买全')">
+        <img src="uploads/人气推荐3.png" alt="益企中秋节" class="item-img"/>
+        <h3 class="item-title">节日礼品一站买全</h3>
+        <p class="item-subtitle">编辑尽心整理推荐</p>
+      </div>
+      <div class="recommend-item" onclick="handleRecommendClick('鲜花园艺')">
+        <img src="uploads/人气推荐4.png" alt="鲜花园艺馆" class="item-img"/>
+        <h3 class="item-title">鲜花园艺</h3>
+        <p class="item-subtitle">给生活增加仪式感</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 新增：热门品牌模块 -->
+<section class="hot-brands">
+  <div class="container">
+    <!-- 标题栏 + 右上角箭头容器 -->
+    <div class="brands-header">
+      <h2 class="brands-title">热门品牌</h2>
+      <p class="brands-desc">国际经典 品质认证</p>
+      <!-- 箭头容器：固定在右上角 -->
+      <div class="brands-arrow-group">
+        <button class="prev-btn" onclick="scrollBrands('prev')">←</button>
+        <button class="next-btn" onclick="scrollBrands('next')">→</button>
+      </div>
+    </div>
+    <!-- 品牌卡片列表（修改alt属性匹配图片品牌名） -->
+    <div class="brands-wrapper">
+      <div class="brands-list" id="brandsList">
+        <div class="brand-item">
+          <img src="uploads/热门品牌1.png" alt="edition" class="brand-img"/>
+          <div class="brand-text">
+          </div>
+        </div>
+        <div class="brand-item">
+          <img src="uploads/热门品牌2.png" alt="inman^" class="brand-img"/>
+          <div class="brand-text">
+          </div>
+        </div>
+        <div class="brand-item">
+          <img src="uploads/热门品牌3.png" alt="白敏亮" class="brand-img"/>
+          <div class="brand-text">
+          </div>
+        </div>
+        <div class="brand-item">
+          <img src="uploads/热门品牌4.png" alt="PEACEBIRD MEN" class="brand-img"/>
+          <div class="brand-text">
+          </div>
+        </div>
+        <div class="brand-item">
+          <img src="uploads/热门品牌5.png" alt="ONLY." class="brand-img"/>
+          <div class="brand-text">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 新增：生鲜模块 -->
+<section class="fresh-produce">
+  <div class="container">
+    <!-- 生鲜模块标题栏（保持不变） -->
+    <div class="produce-header">
+      <h2 class="produce-title">生鲜</h2>
+      <div class="produce-subnav">
+        <a href="#" class="subnav-link active">热门</a>
+        <a href="#" class="subnav-link">蔬菜</a>
+        <a href="#" class="subnav-link">肉禽蛋</a>
+        <a href="#" class="subnav-link">水果</a>
+        <a href="#" class="subnav-link">海鲜</a>
+        <a href="#" class="subnav-link">零食</a>
+        <a href="#" class="subnav-link">饮料</a>
+      </div>
+      <a href="#" class="view-all">查看全部 &gt;</a>
+    </div>
+    <!-- 生鲜促销横幅+商品列表 组合布局（保持外层容器） -->
+    <div class="produce-combo">
+      <!-- 生鲜促销横幅（图片调小，保持左侧位置） -->
+      <div class="produce-banner">
+        <img src="uploads/商品介绍卡片生鲜.png" alt="生鲜高温蒸煮促销" class="banner-img"/>
+        <div class="banner-text">
+          <div class="banner-tags">
+          </div>
+        </div>
+      </div>
+      <!-- 生鲜商品列表（2×4布局，替换预留商品为巧克力/抹茶蛋糕，删除原下方特色区） -->
+      <div class="produce-list">
+        <!-- 第1行商品 -->
+        <div class="produce-item">
+          <img src="uploads/手抓饼.png" alt="双味千层手抓饼烤肉组合" class="item-img"/>
+          <h3 class="item-name">双味千层,手抓饼烤肉组合 240g/袋4片装 加热即食</h3>
+          <span class="item-price">¥89.99</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/馒头.png" alt="云南甘蔗慢熬红糖馒头" class="item-img"/>
+          <h3 class="item-name">云南甘蔗慢熬红糖馒头 220g/袋5个装 加热即食</h3>
+          <span class="item-price">¥9.99</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/小圆饼.png" alt="日式风味小圆饼" class="item-img"/>
+          <h3 class="item-name">日式风味小圆饼 圆形【海盐味】 糖果零食</h3>
+          <span class="item-price">¥588.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/面包.png" alt="全麦奶油浓香小面包" class="item-img"/>
+          <h3 class="item-name">全麦奶油浓香小面包 50g*12袋 美味西点</h3>
+          <span class="item-price">¥69.00</span>
+        </div>
+        <!-- 第2行商品（替换预留为巧克力/抹茶蛋糕，删除原下方特色区） -->
+        <div class="produce-item">
+          <img src="uploads/大福.png" alt="秘制外皮五福摩提大福点心" class="item-img"/>
+          <h3 class="item-name">秘制外皮五福摩提大福点心 150g/盒 美味西点</h3>
+          <span class="item-price">¥39.99</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/蜂蜜.png" alt="水果面膜韩国蜂蜜柚子茶" class="item-img"/>
+          <h3 class="item-name">水果面膜韩国蜂蜜柚子茶 560g/瓶 冲调饮品</h3>
+          <span class="item-price">¥89.99</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/巧克力.png" alt="浓情比利时巧克力礼盒" class="item-img"/>
+          <h3 class="item-name">浓情比利时巧克力礼盒装 205克/盒 糖果零食</h3>
+          <span class="item-price">¥120.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/抹茶蛋糕.png" alt="抹茶奶油小蛋糕" class="item-img"/>
+          <h3 class="item-name">抹茶奶油小蛋糕礼盒装220克/盒 美味西点</h3>
+          <span class="item-price">¥60.00</span>
+        </div>
+      </div>
+    </div>
+    <!-- （删除原下方的produce-feature特色商品区，避免重复） -->
+  </div>
+</section>
+<!-- 新增：服装模块（与生鲜模块布局一致，仅修改标题及内容） -->
+<section class="fresh-produce">
+  <div class="container">
+    <!-- 服装模块标题栏（仅修改标题文本，布局不变） -->
+    <div class="produce-header">
+      <h2 class="produce-title">服装</h2>
+      <div class="produce-subnav">
+        <a href="#" class="subnav-link active">热门</a>
+        <a href="#" class="subnav-link">女装奢侈品</a>
+        <a href="#" class="subnav-link">裤装</a>
+        <a href="#" class="subnav-link">衬衫</a>
+        <a href="#" class="subnav-link">T恤</a>
+        <a href="#" class="subnav-link">内衣</a>
+      </div>
+      <a href="#" class="view-all">查看全部 &gt;</a>
+    </div>
+    <!-- 服装促销横幅+商品列表 组合布局（复用生鲜模块结构） -->
+    <div class="produce-combo">
+      <!-- 服装促销横幅（替换为服装类图片） -->
+      <div class="produce-banner">
+        <img src="uploads/商品介绍卡片-服饰.png" alt="服饰馆3折起狂欢" class="banner-img"/>
+        <div class="banner-text">
+          <div class="banner-tags">
+          </div>
+        </div>
+      </div>
+      <!-- 服装商品列表（2×4布局，替换为服装类商品） -->
+      <div class="produce-list">
+        <!-- 第1行商品 -->
+        <div class="produce-item">
+          <img src="uploads/鞋.png" alt="鞋" class="item-img"/>
+          <h3 class="item-name">时尚鞋子</h3>
+          <span class="item-price">¥719.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/jessyline.png" alt="女装基础款" class="item-img"/>
+          <h3 class="item-name">女装基础款 日常穿搭</h3>
+          <span class="item-price">¥229.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/打底衫.png" alt="日式风格服装" class="item-img"/>
+          <h3 class="item-name">日式风格服装 日常休闲</h3>
+          <span class="item-price">¥198.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/文艺袜子.png" alt="袜子" class="item-img"/>
+          <h3 class="item-name">多色袜子 3双</h3>
+          <span class="item-price">¥88.00</span>
+        </div>
+        <!-- 第2行商品 -->
+        <div class="produce-item">
+          <img src="uploads/裙子.png" alt="BAUH品牌服装" class="item-img"/>
+          <h3 class="item-name">BAUH 高端女装</h3>
+          <span class="item-price">¥598.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/皮带.png" alt="皮带" class="item-img"/>
+          <h3 class="item-name">男士皮带</h3>
+          <span class="item-price">¥168.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/帆布鞋.png" alt="帆布鞋" class="item-img"/>
+          <h3 class="item-name">帆布鞋</h3>
+          <span class="item-price">¥269.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/裤子.png" alt="裤子" class="item-img"/>
+          <h3 class="item-name">长筒裤 直筒裤</h3>
+          <span class="item-price">¥328.00</span>
+        </div>
+      </div>
+    </div>
+    <!-- （与生鲜模块一致，删除重复特色区） -->
+  </div>
+</section>
+<!-- 餐厨模块：复用生鲜/服装模块布局，仅修改标题、子分类与商品内容 -->
+<section class="fresh-produce">
+  <div class="container">
+    <!-- 标题栏：布局不变，替换标题与子分类 -->
+    <div class="produce-header">
+      <h2 class="produce-title">餐厨</h2>
+      <div class="produce-subnav">
+        <a href="#" class="subnav-link active">热门</a>
+        <a href="#" class="subnav-link">厨具</a>
+        <a href="#" class="subnav-link">水具</a>
+        <a href="#" class="subnav-link">灯具</a>
+        <a href="#" class="subnav-link">五金</a>
+        <a href="#" class="subnav-link">家装材料</a>
+        <a href="#" class="subnav-link">居家毫无</a> <!-- 按截图保留“居家毫无”，实际可修正为“居家好物” -->
+      </div>
+      <a href="#" class="view-all">查看全部 &gt;</a>
+    </div>
+
+    <!-- 横幅+商品列表组合布局：复用结构，替换内容 -->
+    <div class="produce-combo">
+      <!-- 餐厨促销横幅 -->
+      <div class="produce-banner">
+        <img src="uploads/商品介绍卡片-餐厨.png" alt="餐厨馆 大额优惠" class="banner-img">
+        <div class="banner-text">
+          <div class="banner-tags">
+          </div>
+        </div>
+      </div>
+
+      <!-- 餐厨商品列表：2×4布局，替换商品内容 -->
+      <div class="produce-list">
+        <!-- 第1行商品 -->
+        <div class="produce-item">
+          <img src="uploads/茶具.png" alt="茶具" class="item-img">
+          <h3 class="item-name">精美茶具</h3>
+          <span class="item-price">¥108.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/收纳盘.png" alt="收纳盘" class="item-img">
+          <h3 class="item-name">收纳盘 水果盘</h3>
+          <span class="item-price">¥28.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/奶泡.png" alt="奶泡" class="item-img">
+          <h3 class="item-name">打发奶泡神器</h3>
+          <span class="item-price">¥58.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/保温瓶.png" alt="保温瓶" class="item-img">
+          <h3 class="item-name">保温瓶 持续长达10h</h3>
+          <span class="item-price">¥69.99</span>
+        </div>
+        <!-- 第2行商品 -->
+        <div class="produce-item">
+          <img src="uploads/餐具.png" alt="餐具" class="item-img">
+          <h3 class="item-name">精品餐具</h3>
+          <span class="item-price">¥99.99</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/蛋糕模具.png" alt="蛋糕模具" class="item-img">
+          <h3 class="item-name">蛋糕模具</h3>
+          <span class="item-price">¥35.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/餐盘.png" alt="餐盘" class="item-img">
+          <h3 class="item-name">餐盘</h3>
+          <span class="item-price">¥12.99</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/水杯.png" alt="水杯" class="item-img">
+          <h3 class="item-name">水杯</h3>
+          <span class="item-price">¥56.99</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 居家模块：复用统一布局，仅修改标题、子分类与商品信息 -->
+<section class="fresh-produce">
+  <div class="container">
+    <!-- 标题栏：保持布局，替换标题和子分类 -->
+    <div class="produce-header">
+      <h2 class="produce-title">居家</h2>
+      <div class="produce-subnav">
+        <a href="#" class="subnav-link active">热门</a>
+        <a href="#" class="subnav-link">鲜花生活</a>
+        <a href="#" class="subnav-link">家纺</a>
+        <a href="#" class="subnav-link">创意礼品</a>
+        <a href="#" class="subnav-link">个人佩饰</a>
+        <a href="#" class="subnav-link">生活日用</a>
+      </div>
+      <a href="#" class="view-all">查看全部 &gt;</a>
+    </div>
+
+    <!-- 横幅+商品列表组合：复用结构，替换内容 -->
+    <div class="produce-combo">
+      <!-- 居家促销横幅 -->
+      <div class="produce-banner">
+        <img src="uploads/商品介绍卡片-居家.png" alt="居家馆 全场满减" class="banner-img">
+        <div class="banner-text">
+          <div class="banner-tags">
+          </div>
+        </div>
+      </div>
+
+      <!-- 居家商品列表：2×4布局，替换商品内容 -->
+      <div class="produce-list">
+        <!-- 第1行商品 -->
+        <div class="produce-item">
+          <img src="uploads/房间的彩虹.png" alt="房间的彩虹" class="item-img">
+          <h3 class="item-name">床上四件套</h3>
+          <span class="item-price">¥128.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/粉色玩偶.png" alt="粉色玩偶" class="item-img">
+          <h3 class="item-name">粉色玩偶 抱枕</h3>
+          <span class="item-price">¥68.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/水培植物.png" alt="水培植物" class="item-img">
+          <h3 class="item-name">水培植物</h3>
+          <span class="item-price">¥35.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/发卡.png" alt="发卡" class="item-img">
+          <h3 class="item-name">发卡</h3>
+          <span class="item-price">¥12.00</span>
+        </div>
+        <!-- 第2行商品 -->
+        <div class="produce-item">
+          <img src="uploads/花瓶.png" alt="花瓶" class="item-img">
+          <h3 class="item-name">花瓶</h3>
+          <span class="item-price">¥29.90</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/简易书桌.png" alt="简易书桌" class="item-img">
+          <h3 class="item-name">简易书桌</h3>
+          <span class="item-price">¥79.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/懒人花盆.png" alt="懒人花盆" class="item-img">
+          <h3 class="item-name">懒人花盆</h3>
+          <span class="item-price">¥29.00</span>
+        </div>
+        <div class="produce-item">
+          <img src="uploads/竹席枕套.png" alt="竹席枕套" class="item-img">
+          <h3 class="item-name">竹席枕套</h3>
+          <span class="item-price">¥168.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 最新专题模块（图标在图片下方：左收藏浏览+右评论） -->
+<section class="latest-topic">
+  <div class="container">
+    <!-- 标题栏：标题+查看全部 -->
+    <div class="topic-header">
+      <h2 class="topic-title">最新专题</h2>
+      <a href="#" class="view-all">查看全部</a>
+    </div>
+
+    <!-- 专题列表：3列布局 -->
+    <div class="topic-list">
+      <!-- 专题项1 -->
+      <div class="topic-item">
+        <!-- 专题图片 -->
+        <img src="uploads/最新专题1.png" alt="美食专题" class="item-img">
+        <!-- 图标+数字区域（图片下方） -->
+        <div class="stats">
+          <!-- 左侧：收藏+浏览图标（靠在一起） -->
+          <div class="left-icons">
+            <div class="stat-item">
+              <img src="uploads/收藏.png" alt="收藏" class="stat-icon">
+              <span class="stat-num">1220</span>
+            </div>
+            <div class="stat-item">
+              <img src="uploads/浏览.png" alt="浏览" class="stat-icon">
+              <span class="stat-num">1800</span>
+            </div>
+          </div>
+          <!-- 右侧：评论图标 -->
+          <div class="right-icon">
+            <div class="stat-item">
+              <img src="uploads/评论.png" alt="评论" class="stat-icon">
+              <span class="stat-num">246</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 专题项2 -->
+      <div class="topic-item">
+        <img src="uploads/最新专题2.png" alt="饮品专题" class="item-img">
+        <div class="stats">
+          <div class="left-icons">
+            <div class="stat-item">
+              <img src="uploads/收藏.png" alt="收藏" class="stat-icon">
+              <span class="stat-num">1220</span>
+            </div>
+            <div class="stat-item">
+              <img src="uploads/浏览.png" alt="浏览" class="stat-icon">
+              <span class="stat-num">1800</span>
+            </div>
+          </div>
+          <div class="right-icon">
+            <div class="stat-item">
+              <img src="uploads/评论.png" alt="评论" class="stat-icon">
+              <span class="stat-num">246</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 专题项3 -->
+      <div class="topic-item">
+        <img src="uploads/最新专题3.png" alt="甜点专题" class="item-img">
+        <div class="stats">
+          <div class="left-icons">
+            <div class="stat-item">
+              <img src="uploads/收藏.png" alt="收藏" class="stat-icon">
+              <span class="stat-num">1220</span>
+            </div>
+            <div class="stat-item">
+              <img src="uploads/浏览.png" alt="浏览" class="stat-icon">
+              <span class="stat-num">1800</span>
+            </div>
+          </div>
+          <div class="right-icon">
+            <div class="stat-item">
+              <img src="uploads/评论.png" alt="评论" class="stat-icon">
+              <span class="stat-num">246</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 底部服务与导航模块（优化版） -->
+<footer class="site-footer">
+  <!-- 服务优势栏 -->
+  <div class="footer-benefits">
+    <div class="benefit-item">
+      <span class="benefit-icon">
+        <img src="uploads/价格亲民.png" alt="价格亲民">
+      </span>
+      <p class="benefit-text">价格亲民</p>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">
+        <img src="uploads/物流快捷.png" alt="物流快捷">
+      </span>
+      <p class="benefit-text">物流快捷</p>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">
+        <img src="uploads/品质新鲜.png" alt="品质新鲜">
+      </span>
+      <p class="benefit-text">品质新鲜</p>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">
+        <img src="uploads/售后无忧.png" alt="售后无忧">
+      </span>
+      <p class="benefit-text">售后无忧</p>
+    </div>
+  </div>
+
+  <!-- 底部导航与信息栏 -->
+  <div class="footer-nav">
+    <div class="container">
+      <div class="nav-col">
+        <h3 class="nav-title">购物指南</h3>
+        <ul>
+          <li><a href="#">购物流程</a></li>
+          <li><a href="#">支付方式</a></li>
+          <li><a href="#">售后规则</a></li>
+        </ul>
+      </div>
+      <div class="nav-col">
+        <h3 class="nav-title">配送方式</h3>
+        <ul>
+          <li><a href="#">配送运费</a></li>
+          <li><a href="#">配送范围</a></li>
+          <li><a href="#">配送时间</a></li>
+        </ul>
+      </div>
+      <div class="nav-col">
+        <h3 class="nav-title">关于我们</h3>
+        <ul>
+          <li><a href="#">平台规则</a></li>
+          <li><a href="#">联系我们</a></li>
+          <li><a href="#">问题反馈</a></li>
+        </ul>
+      </div>
+      <div class="nav-col">
+        <h3 class="nav-title">售后服务</h3>
+        <ul>
+          <li><a href="#">售后政策</a></li>
+          <li><a href="#">退款说明</a></li>
+          <li><a href="#">取消订单</a></li>
+        </ul>
+      </div>
+      <div class="nav-col">
+        <h3 class="nav-title">服务热线</h3>
+        <p class="hotline-text">在线客服</p>
+        <p class="hotline-phone">客服电话 400-0000-000</p>
+        <p class="hotline-time">工作时间 周一至周日 8:00-18:00</p>
+      </div>
+      <div class="nav-col qr-col">
+        <img src="uploads/微信公众号.png" alt="微信公众号" class="qr-code">
+        <p class="qr-text">微信公众号</p>
+      </div>
+      <div class="nav-col qr-col">
+        <img src="uploads/APP二维码.png" alt="APP下载二维码" class="qr-code">
+        <p class="qr-text">APP下载二维码</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部版权与备案栏 -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="copyright">
+        <a href="#">关于我们</a> | 
+        <a href="#">帮助中心</a> | 
+        <a href="#">售后服务</a> | 
+        <a href="#">配送与验收</a> | 
+        <a href="#">商务合作</a> | 
+        <a href="#">搜索推荐</a> | 
+        @CopyRight © 小兔鲜
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
