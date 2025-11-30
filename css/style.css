@@ -1,0 +1,822 @@
+/* 通用样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 容器通用样式（统一页面宽度和居中） */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 原有页眉样式（完整保留） */
+.top-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.top-header a {
+  margin: 0 8px;
+  font-size: 14px;
+}
+.mobile-link {
+  display: inline-flex;
+  align-items: center;
+}
+.mobile-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+/* 原有头部导航样式（完整保留） */
+.header-nav {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+.header-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo {
+  margin-right: 40px;
+}
+.logo img {
+  height: 70px;
+  width: auto;
+}
+.main-nav ul {
+  display: flex;
+  gap: 25px;
+}
+.main-nav a {
+  color: #333;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: color 0.2s;
+}
+.main-nav a:hover {
+  color: #ff5722;
+}
+.search-cart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+.search-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 200px;
+}
+.search-box input::placeholder {
+  color: #999;
+}
+.cart {
+  position: relative;
+}
+.cart-icon {
+  width: 22px;
+  height: 22px;
+}
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ff5722;
+  color: #fff;
+  font-size: 11px;
+  padding: 1px 4px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+/* 左侧分类 + 右侧图片布局（核心控制） */
+.main-container {
+  display: flex;
+  max-width: 1200px; /* 限制整体宽度不超页面 */
+  margin: 20px auto;
+  padding: 0 20px;
+  align-items: stretch; /* 强制子元素高度一致（黑框=图片） */
+  gap: 15px; /* 黑框与图片间距，避免紧贴 */
+}
+
+/* 左侧分类导航（黑框） */
+.category-aside {
+  width: 230px; /* 固定黑框宽度，不随页面拉伸 */
+  background-color: #555;
+  color: #fff;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+}
+.category-list .category-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-title {
+  font-weight: 600;
+  min-width: 65px;
+  text-align: left;
+  padding: 3px 0;
+}
+.sub-title {
+  padding: 3px 0;
+}
+.arrow-link {
+  padding: 3px 0;
+  margin-left: auto;
+  font-size: 15px;
+}
+.item-link {
+  color: #fff;
+  cursor: pointer;
+  transition: none;
+}
+.item-link:hover {
+  color: #fff;
+  background: none;
+  transform: none;
+}
+
+/* 右侧图片区域（核心：宽度限制+高度对齐） */
+.banner-section {
+  flex: 1; /* 剩余空间分配给图片，但不无限拉伸 */
+  max-width: calc(100% - 245px); /* 图片最大宽度=整体宽度-黑框宽度-间距，确保不超页面 */
+  overflow: hidden; /* 隐藏超出部分 */
+}
+.banner-img {
+  width: 100%; /* 图片宽度适应父容器 */
+  height: 100%; /* 图片高度与父容器一致（即与黑框同高） */
+  object-fit: cover; /* 保持图片比例，填充容器（裁剪多余部分） */
+  object-position: center; /* 裁剪时保留图片中心区域 */
+}
+
+/* ===================== 新鲜好物模块 ===================== */
+.fresh-goods {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* 标题栏布局：Flex 控制，实现标题+描述居左、查看全部居右 */
+.goods-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 标题+描述默认靠左 */
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.goods-title {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  margin-right: 15px; /* 与描述保持间距 */
+}
+.goods-desc {
+  color: #999;
+  font-size: 14px;
+  margin: 0; /* 清除默认边距 */
+}
+
+/* 查看全部：通过 margin-left:auto 推至右侧，恢复流式布局 */
+.fresh-goods .view-all {
+  color: #999;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-left: auto; /* 核心：Flex 布局下右对齐 */
+  position: static;  /* 清除绝对定位影响 */
+  top: auto;
+  right: auto;
+  transform: none;
+  text-decoration: none; /* 清除下划线，与设计一致 */
+}
+.fresh-goods .view-all:hover {
+  color: #ff5722; /* hover 变橙色，保持交互 */
+}
+
+/* 商品列表：25% 宽度 + 间距控制 */
+.goods-list {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.goods-item {
+  width: calc(25% - 20px); /* 四列布局，计算间距 */
+  border: 1px solid #f5f5f5;
+  border-radius: 4px;
+  padding: 15px;
+  transition: box-shadow 0.2s;
+  text-align: center; /* 使子元素整体居中 */
+}
+.goods-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 悬浮阴影，可选 */
+}
+.goods-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.goods-name {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.goods-price {
+  font-size: 18px;
+  color: #ff5722;
+  font-weight: bold;
+}
+
+/* ===================== 人气推荐模块 ===================== */
+.popular-recommend {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* 标题栏布局：与新鲜好物模块逻辑一致 */
+.recommend-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 标题+描述默认靠左 */
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.recommend-title {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  margin-right: 15px; /* 与描述保持间距 */
+}
+.recommend-desc {
+  color: #999;
+  font-size: 14px;
+  margin: 0; /* 清除默认边距 */
+}
+
+/* 查看全部：通过 margin-left:auto 推至右侧，恢复流式布局 */
+.popular-recommend .view-all {
+  color: #999;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-left: auto; /* 核心：Flex 布局下右对齐 */
+  position: static;  /* 清除绝对定位影响 */
+  top: auto;
+  right: auto;
+  transform: none;
+  text-decoration: none; /* 清除下划线，与设计一致 */
+}
+.popular-recommend .view-all:hover {
+  color: #ff5722; /* hover 变橙色，保持交互 */
+}
+
+/* 推荐列表：25% 宽度 + 间距控制 */
+.recommend-list {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.recommend-item {
+  width: calc(25% - 20px); /* 四列布局，计算间距 */
+  border: 1px solid #f5f5f5;
+  border-radius: 4px;
+  padding: 15px;
+  transition: all 0.2s;
+  text-align: center;
+  cursor: pointer;
+}
+.recommend-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 悬浮阴影，可选 */
+}
+.recommend-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.item-title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.item-subtitle {
+  font-size: 14px;
+  color: #999;
+}
+
+/* -------------------------- 热门品牌模块样式（匹配设计图版） -------------------------- */
+.hot-brands {
+  width: 100%; 
+  margin: 30px auto;
+  padding: 15px 0; /* 仅保留上下内边距（15px），删除左右20px内边距，消除白边 */
+  background-color: #f5f5f5; /* 浅灰色背景 */
+}
+/* 标题栏：保留原有布局，新增左右20px内边距（与其他模块内容对齐） */
+.brands-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  padding: 0 20px; /* 新增左右内边距，确保标题/箭头与页面其他内容左右对齐 */
+  position: relative;
+}
+.brands-title {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  margin-right: 15px;
+}
+.brands-desc {
+  color: #999;
+  font-size: 14px;
+  margin: 0;
+}
+/* 箭头容器：保持右上角定位，基于brands-header的内边距定位 */
+.brands-arrow-group {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 50%; /* 垂直居中 */
+  transform: translateY(-50%); /* 垂直居中校正 */
+  right: 20px; /* 与brands-header的右内边距一致 */
+}
+.prev-btn, .next-btn {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  transition: all 0.2s;
+  line-height: 1;
+}
+.prev-btn:hover, .next-btn:hover {
+  border-color: #ff5722;
+  color: #ff5722;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.prev-btn:disabled, .next-btn:disabled {
+  border-color: #eee;
+  color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+/* 品牌滚动容器：新增左右20px内边距，确保品牌卡片与标题左右对齐 */
+.brands-wrapper {
+  overflow: hidden;
+  padding: 0 20px; /* 新增左右内边距，与标题区域对齐 */
+}
+/* 滚动列表：五张图片横向排列 */
+.brands-list {
+  display: flex;
+  gap: 20px; /* 保持间距，避免图片拥挤 */
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 0 0 15px 0; /* 底部保留少量间距 */
+}
+/* 单个品牌卡片 */
+.brand-item {
+  min-width: calc(20% - 16px); /* 五张均分宽度 */
+  border: none; /* 移除白框 */
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 图片和文字水平居中 */
+  transition: transform 0.2s;
+}
+/* 悬浮效果：轻微放大 */
+.brand-item:hover {
+  transform: scale(1.03);
+  box-shadow: none;
+}
+/* 品牌图片 */
+.brand-img {
+  width: 100%;
+  height: 300px; /* 固定图片高度 */
+  object-fit: contain; /* 完整显示图片，不裁剪 */
+  margin-bottom: 8px; /* 图片与文字间距 */
+}
+/* 品牌文字区域 */
+.brand-text {
+  width: 100%;
+  text-align: center;
+}
+
+/* -------------------------- 生鲜/服装/餐厨/居家 通用模块样式 -------------------------- */
+.fresh-produce {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  background-color: #fff;
+}
+
+/* 标题栏：子分类放右侧（查看全部左边） */
+.produce-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  gap: 15px;
+  position: relative; /* 作为子分类和查看全部的绝对定位容器 */
+}
+.produce-title {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  white-space: nowrap;
+}
+/* 子分类导航：固定在右侧（查看全部左边） */
+.produce-subnav {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  right: 100px; /* 为"查看全部"预留宽度 */
+  top: 50%;
+  transform: translateY(-50%); /* 垂直居中 */
+}
+/* 子分类链接：黑色字体+点击效果 */
+.subnav-link {
+  font-size: 14px;
+  color: #000; /* 字体改为黑色 */
+  padding: 3px 0;
+  transition: all 0.2s; /* 过渡动画 */
+  text-decoration: none;
+  position: relative;
+}
+/* 活跃状态（热门）：保持黑色，加下划线区分 */
+.subnav-link.active {
+  color: #000;
+  font-weight: 600;
+}
+/* 点击/hover效果：下划线+轻微上移 */
+.subnav-link:hover {
+  color: #000;
+  transform: translateY(-1px);
+}
+/* 下划线效果（活跃/hover时显示） */
+.subnav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000; /* 黑色下划线 */
+  transition: width 0.2s;
+}
+.subnav-link.active::after,
+.subnav-link:hover::after {
+  width: 100%; /* 活跃/hover时显示下划线 */
+}
+/* 查看全部：生鲜/服装等模块专用样式（绝对定位） */
+.fresh-produce .view-all {
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+  position: absolute;
+  right: 0; /* 贴紧右侧边缘 */
+  top: 50%;
+  transform: translateY(-50%); /* 垂直居中 */
+}
+.fresh-produce .view-all:hover {
+  text-decoration: underline; /* 查看全部hover下划线 */
+}
+
+/* 组合布局：左侧横幅 + 右侧商品列表 */
+.produce-combo {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.produce-banner {
+  width: 22%;
+  min-width: 240px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.produce-banner .banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.banner-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  color: #fff;
+}
+.banner-desc {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.banner-tags {
+  display: flex;
+  gap: 8px;
+}
+.tag {
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* 右侧商品列表 */
+.produce-list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.produce-item {
+  width: calc(25% - 12px);
+  border: 1px solid #f5f5f5;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+.produce-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.produce-item .item-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  border-radius: 2px;
+}
+.item-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 40px;
+}
+.item-price {
+  font-size: 16px;
+  color: #e53935;
+  font-weight: bold;
+}
+
+/* 最新专题模块样式（图标在图片下方版） */
+.latest-topic {
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+/* 标题栏布局 */
+.topic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.topic-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+/* 最新专题模块的查看全部样式 */
+.latest-topic .view-all {
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.latest-topic .view-all:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+/* 专题列表：3列弹性布局 */
+.topic-list {
+  display: flex;
+  gap: 20px;
+}
+.topic-item {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+  background-color: #fff; /* 卡片背景色，与图标区域区分 */
+}
+.topic-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 专题图片样式 */
+.topic-item .item-img {
+  width: 100%;
+  height: 220px; /* 固定高度，保持3列统一 */
+  object-fit: cover; /* 图片填充不拉伸 */
+  display: block;
+  border-bottom: 1px solid #f5f5f5; /* 图片与图标区域分隔线 */
+}
+
+/* 图标+数字区域（图片下方） */
+.stats {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between; /* 左右分布 */
+  align-items: center;
+}
+/* 左侧：收藏+浏览图标（靠在一起） */
+.left-icons {
+  display: flex;
+  gap: 18px; /* 收藏与浏览的间距 */
+}
+/* 右侧：评论图标 */
+.right-icon {
+  display: flex;
+}
+/* 单个统计项：图标+数字横向排列 */
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 图标与数字间距 */
+  font-size: 14px;
+  color: #666;
+}
+/* 图标样式 */
+.stat-icon {
+  width: 16px; /* 图标尺寸 */
+  height: 16px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+/* 数字样式 */
+.stat-num {
+  color: #666;
+}
+
+/* 底部模块整体样式（浅灰背景） */
+.site-footer {
+  background-color: #fafafa; /* 浅灰色背景 */
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 服务优势栏：水平排列+文字放大 */
+.footer-benefits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0; /* 适当增加内边距 */
+  border-bottom: 1px solid #f0f0f0; /* 分隔线颜色适配浅灰背景 */
+}
+.benefit-item {
+  display: flex;
+  align-items: center;
+  margin: 0 40px; /* 增加间距，避免文字拥挤 */
+}
+.benefit-icon img {
+  width: 44px; /* 图标同步放大 */
+  height: 44px;
+  margin-right: 12px;
+}
+.benefit-text {
+  font-size: 20px; /* 文字放大 */
+  color: #333;
+  font-weight: 600; /* 加粗，增强视觉权重 */
+}
+
+/* 底部导航容器：限制宽度+居中 */
+.footer-nav .container {
+  display: flex;
+  flex-wrap: wrap; /* 适配小屏幕 */
+  justify-content: space-between;
+  padding: 30px 20px;
+}
+
+/* 导航列样式：宽度自适应 */
+.nav-col {
+  flex: 1;
+  min-width: 150px;
+  margin-bottom: 20px;
+}
+.nav-title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.nav-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-col li {
+  margin-bottom: 6px;
+}
+.nav-col a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-col a:hover {
+  color: #000;
+}
+
+/* 服务热线列特殊样式 */
+.hotline-text {
+  color: #333;
+  margin-bottom: 4px;
+}
+.hotline-phone {
+  font-weight: 600;
+  color: #333;
+}
+.hotline-time {
+  font-size: 13px;
+  color: #999;
+}
+
+/* 二维码列样式 */
+.qr-col {
+  text-align: center;
+}
+.qr-code {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+}
+.qr-text {
+  font-size: 13px;
+  color: #999;
+}
+
+/* 底部版权栏：居中+分隔线 */
+.footer-bottom {
+  border-top: 1px solid #f0f0f0; /* 分隔线颜色适配浅灰背景 */
+  padding: 15px 0;
+}
+.footer-bottom .container {
+  text-align: center;
+}
+.copyright a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 5px;
+}
+.copyright a:hover {
+  color: #000;
+}
